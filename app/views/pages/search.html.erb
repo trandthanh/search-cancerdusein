@@ -1,7 +1,21 @@
 <h1>In search!</h1>
 
-<%= @search.total_count %>
+<%= @link_search.total_count %>
 
-<% @search.each do |s| %>
+<% @link_search.each do |s| %>
   <p><%= s.title %></p>
+  <% s.categories.each do |sc| %>
+    <%= sc.theme.title %>
+  <% end %>
+  <hr>
+<% end %>
+
+<h1>Category</h1>
+
+<%= @theme_search.total_count %>
+
+<% @theme_search.each do |s| %>
+  <% s.categories.each do |sc| %>
+    <%= sc.link.title %>
+  <% end %>
 <% end %>
