@@ -4,7 +4,7 @@ class Link < ApplicationRecord
   has_many :categories, dependent: :destroy
   has_many :thelmes, through: :categories
 
-  validates :type, presence: true
+  validates :format, presence: true
   validates :title, presence: true
   validates :publication, presence: true
   validates :language, presence: true
@@ -12,3 +12,5 @@ class Link < ApplicationRecord
   validates :note, presence: true
   validates :url, presence: true
 end
+
+
