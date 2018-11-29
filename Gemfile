@@ -40,6 +40,8 @@ gem 'bootstrap'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+gem 'searchkick'
+
 
 
 # Reduces boot times through caching; required in config/boot.rb

@@ -1,1 +1,7 @@
 <h1>In search!</h1>
+
+<%= @search.total_count %>
+
+<% @search.each do |s| %>
+  <p><%= s.title %></p>
+<% end %>
