@@ -1,0 +1,14 @@
+.catchphrase-big {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.tips {
+  p {
+    color: $black-shadows;
+    font-style: italic;
+  }
+  margin-top: 10px;
+}

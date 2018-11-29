@@ -1,0 +1,37 @@
+.searchbar-big {
+  border: 1px solid white;
+  border-radius: 40px;
+  width: 500px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  &:focus {
+    outline: none !important;
+    border:1px solid $light-crimson;
+    box-shadow: 0 0 5px $light-crimson;
+  }
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  i {
+    color: $light-crimson;
+    font-size: 25px;
+  }
+}
+
+form {
+  position: relative;
+}
+
+.search-button {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px white;
+}

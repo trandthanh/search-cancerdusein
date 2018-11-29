@@ -1,5 +1,23 @@
-<div class="navbar-home">
-  <div class="logo-navbar">
-    <h4>Comprendre|LE CANCER DU SEIN</h4>
+<div class="navbar">
+  <div class="navbar-left">
+    <%= link_to root_path do %>
+      <%= image_tag asset_path("logo.png"), class: "logo-navbar" %>
+    <% end %>
+  </div>
+
+  <div class="navbar-right">
+    <% @themes.each do |t| %>
+      <div class="item-navbar-right-pink">
+        <%= link_to theme_path(t) do %>
+          <h6><%= t.title %></h6>
+        <% end %>
+
+      </div>
+    <% end %>
+    <div class="item-navbar-right-grey">
+      <%= link_to monhistoire_path do %>
+        <h6>mon histoire</h6>
+      <% end %>
+    </div>
   </div>
 </div>
