@@ -143,7 +143,7 @@
     margin-top: 30px;
     i {
       color: $light-crimson;
-      font-size: 25px;
+      font-size: 35px;
     }
   }
 
@@ -153,8 +153,9 @@
 
   .search-button {
     position: absolute;
-    right: 12px;
-    top: 6px;
+    right: 5px;
+    top: 3px;
+    background-color: transparent;
   }
 
   input:-webkit-autofill {
@@ -207,10 +208,11 @@
 @media (min-device-width:320px) and (max-device-width: 480px) {
   .searchbar-big {
     border: 1px solid white;
-    border-radius: 40px;
-    width: 500px;
+    border-radius: 70px;
+    width: 800px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    padding: 15px;
+    padding: 30px;
+    font-size: 30px;
     &:focus {
       outline: none !important;
       border:1px solid $light-crimson;
@@ -225,7 +227,7 @@
     margin-top: 30px;
     i {
       color: $light-crimson;
-      font-size: 25px;
+      font-size: 55px;
     }
   }
 
@@ -236,7 +238,8 @@
   .search-button {
     position: absolute;
     right: 12px;
-    top: 6px;
+    top: 18px;
+    background-color: transparent;
   }
 
   input:-webkit-autofill {

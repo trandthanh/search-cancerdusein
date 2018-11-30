@@ -1,23 +1,30 @@
-<div class="navbar">
+<nav class="navbar navbar-expand-lg">
   <div class="navbar-left">
     <%= link_to root_path do %>
       <%= image_tag asset_path("logo.png"), class: "logo-navbar" %>
     <% end %>
   </div>
 
-  <div class="navbar-right">
-    <% @themes.each do |t| %>
-      <div class="item-navbar-right-pink">
-        <%= link_to theme_path(t) do %>
-          <h6><%= t.title %></h6>
-        <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
 
-      </div>
-    <% end %>
-    <div class="item-navbar-right-grey">
-      <%= link_to monhistoire_path do %>
-        <h6>mon histoire</h6>
+  <div class="navbar-right collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <% @themes.each do |t| %>
+        <div class="item-navbar-right-pink">
+          <%= link_to theme_path(t) do %>
+            <h6><%= t.title %></h6>
+          <% end %>
+        </div>
       <% end %>
+      <div class="item-navbar-right-grey">
+        <%= link_to monhistoire_path do %>
+          <h6>mon histoire</h6>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+</nav>
+
+
