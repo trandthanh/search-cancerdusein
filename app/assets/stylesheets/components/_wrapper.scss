@@ -1,5 +1,53 @@
-.wrapper-pink {
-  background-color: $lavender-blush;
-  height: calc(100vh - 110px);
-  display: flex;
+/* hi-res laptops and desktops */
+@media (min-device-width: 1281px) {
+  .wrapper-pink {
+    background-color: $lavender-blush;
+    height: calc(100vh - 110px);
+    display: flex;
+  }
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-device-width:1025px) and (max-device-width: 1280px) {
+  .wrapper-pink {
+    background-color: $lavender-blush;
+    height: calc(100vh - 110px);
+    display: flex;
+  }
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-device-width:961px) and (max-device-width: 1024px) {
+  .wrapper-pink {
+    background-color: $lavender-blush;
+    height: calc(100vh - 110px);
+    display: flex;
+  }
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-device-width:641px) and (max-device-width: 960px) {
+  .wrapper-pink {
+    background-color: $lavender-blush;
+    height: calc(100vh - 110px);
+    display: flex;
+  }
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-device-width:481px) and (max-device-width: 640px) {
+  .wrapper-pink {
+    background-color: $lavender-blush;
+    height: calc(100vh - 110px);
+    display: flex;
+  }
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-device-width:320px) and (max-device-width: 480px) {
+  .wrapper-pink {
+    background-color: $lavender-blush;
+    height: calc(100vh - 110px);
+    display: flex;
+  }
 }
