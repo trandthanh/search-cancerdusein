@@ -11,7 +11,7 @@
 
   <div class="navbar-right collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <% @themes.each do |t| %>
+      <% @themes.order('created_at ASC').each do |t| %>
         <div class="item-navbar-right-pink">
           <%= link_to theme_path(t) do %>
             <h6><%= t.title %></h6>
