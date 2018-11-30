@@ -2,7 +2,7 @@ class Link < ApplicationRecord
   has_many :tags, dependent: :destroy
   has_many :keywords, through: :tags
   has_many :categories, dependent: :destroy
-  has_many :thelmes, through: :categories
+  has_many :themes, through: :categories
 
   validates :format, presence: true
   validates :title, presence: true

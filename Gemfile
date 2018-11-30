@@ -42,6 +42,7 @@ gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'searchkick'
 gem 'devise'
+gem 'rails_admin'
 
 
 
