@@ -41,6 +41,7 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'searchkick'
+gem 'devise'
 
 
 
