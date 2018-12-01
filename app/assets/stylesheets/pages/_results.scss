@@ -1,0 +1,39 @@
+/* hi-res laptops and desktops */
+@media (min-device-width: 1281px) {
+  .results-count {
+    padding: 60px 0px;
+    border-bottom: 1px solid gray;
+  }
+
+  .results-theme {
+    padding: 50px 0px;
+  }
+
+  .results-article {
+    background-color: $white-smoke;
+    padding: 20px 50px;
+    p {
+      color: $ash-grey;
+      margin-bottom: 5px;
+    }
+  }
+
+  .results-article-title {
+    margin-bottom: 10px;
+    h4 {
+      padding-right: 8px;
+      display: inline;
+      color: $light-crimson;
+    }
+    h6 {
+      display: inline;
+      color: $light-crimson;
+      font-weight: 400px;
+    }
+  }
+
+  .results-article-note {
+    font-style: italic;
+    font-weight: 300;
+  }
+}
