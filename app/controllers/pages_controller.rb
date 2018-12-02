@@ -11,6 +11,10 @@ class PagesController < ApplicationController
     @link_search = Link.search params[:query], operator: "or"
     @theme_search = Theme.search params[:query], operator: "or"
     @themes = Theme.all
+
+    @navbar_search = Link.search(params.fetch(:q, "*"))
+
+    @links = Link.all
   end
 
   def monhistoire

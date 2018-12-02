@@ -1,3 +1,52 @@
-<p>Navbar normal</p>
+<nav class="navbar navbar-expand-lg">
+  <div class="navbar-left">
+    <%= link_to root_path do %>
+      <%= image_tag asset_path("logo.png"), class: "logo-navbar" %>
+    <% end %>
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div class="navbar-right">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <% @themes.order('created_at ASC').each do |t| %>
+          <div class="item-navbar-right-pink">
+            <%= link_to theme_path(t) do %>
+              <h6><%= t.title %></h6>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="item-navbar-right-grey">
+          <%= link_to monhistoire_path do %>
+            <h6>mon histoire</h6>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="item-navbar-right-black">
+      <!-- <div id="wrap"> -->
+        <!-- <form action="" autocomplete="on"> -->
+        <!-- <form action="">
+          <input id="search" name="search" type="text" placeholder="Recherchez"><input id="search_submit" value="Rechercher" type="submit">
+        </form> -->
+      <!-- </div> -->
+      <%= form_tag results_path, method: :get do %>
+        <%= text_field_tag :q,
+          params[:q],
+          autocomplete: "off",
+          class: "searchbar-big",
+          placeholder: "Rechercher un mot-clé"
+        %>
+        <%= button_tag(type: "submit", class: "btn btn-default search-button") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</nav>
 
 
