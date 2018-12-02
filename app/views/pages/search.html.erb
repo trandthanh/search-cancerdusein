@@ -1,16 +1,16 @@
 <div class="wrapper-white">
-  <div class="results-count">
-    <% if params[:q].nil? %>
-      <h2><%= pluralize @link_search.total_count, "résultat" %> pour "<%= params[:query] %>"</h2>
-    <% end %>
-
-    <% if params[:query].nil? %>
-      <h2><%= pluralize @navbar_search.total_count, "résultat" %> pour "<%= params[:q] %>"</h2>
-    <% end %>
-
-  </div>
-
   <% if %w(s'informer gerer gérer vivre ressources recherche).include?(params[:query]) || %w(s'informer gerer gérer vivre ressources recherche).include?(params[:q]) %>
+
+    <div class="results-count">
+      <% if params[:q].nil? %>
+        <h2><%= pluralize @links_theme.count, "résultat" %> pour "<%= params[:query] %>"</h2>
+      <% end %>
+
+      <% if params[:query].nil? %>
+        <h2><%= pluralize @links_theme.count, "résultat" %> pour "<%= params[:q] %>"</h2>
+      <% end %>
+
+    </div>
 
     <% if %w(s'informer gerer gérer vivre ressources recherche).include?(params[:query]) %>
       <div class="results-list results-theme">
@@ -62,61 +62,79 @@
 
     <% else %>
 
-    <div class="results-list">
-      <div class="results-list-head">
-        <% @themes.each do |t| %>
-          <div class="results-theme">
+      <div class="results-count">
+        <% if params[:q].nil? %>
+          <h2><%= pluralize @link_search.total_count, "résultat" %> pour "<%= params[:query] %>"</h2>
+        <% end %>
+
+        <% if params[:query].nil? %>
+          <h2><%= pluralize @link_search_q.total_count, "résultat" %> pour "<%= params[:q] %>"</h2>
+        <% end %>
+
+      </div>
+
+      <div class="results-list">
+        <div class="results-list-head">
+          <% @themes.each do |t| %>
             <% if params[:q].nil? %>
-              <h6>Dans la catégorie "<%= t.title %>" (<%= pluralize @link_search.results.count { |ls| ls.themes.include?(t) }, "résultat" %>)</h6>
+              <% if @link_search.results.count { |ls| ls.themes.include?(t) } != 0 %>
+                <div class="results-theme">
+                  <h6>Dans la catégorie "<%= t.title %>" (<%= pluralize @link_search.results.count { |ls| ls.themes.include?(t) }, "résultat" %>)</h6>
+                </div>
+              <% end %>
             <% end %>
             <% if params[:query].nil? %>
-              <h6>Dans la catégorie "<%= t.title %>" (<%= pluralize @navbar_search.results.count { |ls| ls.themes.include?(t) }, "résultat" %>)</h6>
+              <% if @navbar_search.results.count { |ls| ls.themes.include?(t) } != 0 %>
+                <div class="results-theme">
+                  <h6>Dans la catégorie "<%= t.title %>" (<%= pluralize @navbar_search.results.count { |ls| ls.themes.include?(t) }, "résultat" %>)</h6>
+                </div>
+              <% end %>
             <% end %>
-          </div>
 
-          <% unless params[:query].nil? %>
-            <% @link_search.each do |ls| %>
-              <% ls.themes.each do |lst| %>
-                <% if t == lst %>
-                  <div class="results-article">
-                    <div class="results-article-title">
-                      <h4><%= ls.title %></h4>
-                      <h6>/ publié par <%= ls.publication %>
-                        <% unless ls.date.nil? %>
-                          , <%= ls.date %></h6>
-                        <% end %>
+
+            <% unless params[:query].nil? %>
+              <% @link_search.each do |ls| %>
+                <% ls.themes.each do |lst| %>
+                  <% if t == lst %>
+                    <div class="results-article">
+                      <div class="results-article-title">
+                        <h4><%= ls.title %></h4>
+                        <h6>/ publié par <%= ls.publication %>
+                          <% unless ls.date.nil? %>
+                            , <%= ls.date %></h6>
+                          <% end %>
+                      </div>
+                      <p><%= ls.description %></p>
+                      <p class="results-article-note">Avis de l'équipe : <%= ls.note %></p>
                     </div>
-                    <p><%= ls.description %></p>
-                    <p class="results-article-note">Avis de l'équipe : <%= ls.note %></p>
-                  </div>
+                  <% end %>
                 <% end %>
               <% end %>
             <% end %>
-          <% end %>
 
-          <% unless params[:q].nil? %>
-            <% @navbar_search.each do |ls| %>
-              <% ls.themes.each do |lst| %>
-                <% if t == lst %>
-                  <div class="results-article">
-                    <div class="results-article-title">
-                      <h4><%= ls.title %></h4>
-                      <h6>/ publié par <%= ls.publication %>
-                        <% unless ls.date.nil? %>
-                          , <%= ls.date %></h6>
-                        <% end %>
+            <% unless params[:q].nil? %>
+              <% @navbar_search.each do |ls| %>
+                <% ls.themes.each do |lst| %>
+                  <% if t == lst %>
+                    <div class="results-article">
+                      <div class="results-article-title">
+                        <h4><%= ls.title %></h4>
+                        <h6>/ publié par <%= ls.publication %>
+                          <% unless ls.date.nil? %>
+                            , <%= ls.date %></h6>
+                          <% end %>
+                      </div>
+                      <p><%= ls.description %></p>
+                      <p class="results-article-note">Avis de l'équipe : <%= ls.note %></p>
                     </div>
-                    <p><%= ls.description %></p>
-                    <p class="results-article-note">Avis de l'équipe : <%= ls.note %></p>
-                  </div>
+                  <% end %>
                 <% end %>
               <% end %>
             <% end %>
-          <% end %>
 
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
 
   <% end %>
 

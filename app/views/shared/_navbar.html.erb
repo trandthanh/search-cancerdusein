@@ -37,10 +37,10 @@
         <%= text_field_tag :q,
           params[:q],
           autocomplete: "off",
-          class: "searchbar-big",
+          class: "searchbar-medium",
           placeholder: "Rechercher un mot-clé"
         %>
-        <%= button_tag(type: "submit", class: "btn btn-default search-button") do %>
+        <%= button_tag(type: "button", class: "btn btn-default search-button-js transparent-background") do %>
           <i class="fas fa-search"></i>
         <% end %>
       <% end %>
