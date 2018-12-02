@@ -21,5 +21,6 @@ class PagesController < ApplicationController
   end
 
   def monhistoire
+    @themes = Theme.all
   end
 end
