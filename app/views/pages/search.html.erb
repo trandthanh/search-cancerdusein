@@ -1,17 +1,13 @@
 <div class="wrapper-white">
   <% if %w(s'informer gerer gérer vivre ressources recherche).include?(params[:query]) || %w(s'informer gerer gérer vivre ressources recherche).include?(params[:q]) %>
-
     <div class="results-count">
       <% if params[:q].nil? %>
         <h2><%= pluralize @links_theme.count, "résultat" %> pour "<%= params[:query] %>"</h2>
       <% end %>
-
       <% if params[:query].nil? %>
         <h2><%= pluralize @links_theme.count, "résultat" %> pour "<%= params[:q] %>"</h2>
       <% end %>
-
     </div>
-
     <% if %w(s'informer gerer gérer vivre ressources recherche).include?(params[:query]) %>
       <div class="results-list results-theme">
         <% @links.each do |ls| %>
@@ -20,7 +16,9 @@
               <% lst.categories.each do |lstc| %>
                 <div class="results-article">
                   <div class="results-article-title">
-                    <h4><%= lstc.link.title %></h4>
+                    <%= link_to lstc.link.url, target: "_blank", class: "results-article-link" do %>
+                      <h4><%= lstc.link.title %></h4>
+                    <% end %>
                     <h6>/ publié par <%= lstc.link.publication %>
                       <% unless lstc.link.date.nil? %>
                         , <%= lstc.link.date %></h6>
@@ -35,7 +33,6 @@
         <% end %>
       </div>
     <% end %>
-
     <% if %w(s'informer gerer gérer vivre ressources recherche).include?(params[:q]) %>
       <div class="results-list results-theme">
               <% @links.each do |ls| %>
@@ -44,7 +41,9 @@
                     <% lst.categories.each do |lstc| %>
                       <div class="results-article">
                         <div class="results-article-title">
-                          <h4><%= lstc.link.title %></h4>
+                          <%= link_to lstc.link.url, target: "_blank", class: "results-article-link" do %>
+                            <h4><%= lstc.link.title %></h4>
+                          <% end %>
                           <h6>/ publié par <%= lstc.link.publication %>
                             <% unless lstc.link.date.nil? %>
                               , <%= lstc.link.date %></h6>
@@ -98,7 +97,9 @@
                   <% if t == lst %>
                     <div class="results-article">
                       <div class="results-article-title">
-                        <h4><%= ls.title %></h4>
+                        <%= link_to ls.url, target: "_blank", class: "results-article-link" do %>
+                          <h4><%= ls.title %></h4>
+                        <% end %>
                         <h6>/ publié par <%= ls.publication %>
                           <% unless ls.date.nil? %>
                             , <%= ls.date %></h6>
@@ -118,7 +119,9 @@
                   <% if t == lst %>
                     <div class="results-article">
                       <div class="results-article-title">
-                        <h4><%= ls.title %></h4>
+                        <%= link_to ls.url, target: "_blank", class: "results-article-link" do %>
+                          <h4><%= ls.title %></h4>
+                        <% end %>
                         <h6>/ publié par <%= ls.publication %>
                           <% unless ls.date.nil? %>
                             , <%= ls.date %></h6>
@@ -135,7 +138,5 @@
           <% end %>
         </div>
       </div>
-
   <% end %>
-
 </div>

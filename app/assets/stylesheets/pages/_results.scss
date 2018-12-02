@@ -30,10 +30,22 @@
       color: $light-crimson;
       font-weight: 400px;
     }
+    a {
+      text-decoration: none;
+    }
   }
 
   .results-article-note {
     font-style: italic;
     font-weight: 300;
+  }
+
+  .results-article-link {
+    h4 {
+      &:hover {
+        color: $light-crimson;
+        opacity: 0.5;
+      }
+    }
   }
 }
