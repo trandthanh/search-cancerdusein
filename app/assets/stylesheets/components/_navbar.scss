@@ -7,7 +7,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: $lavender-blush;
-    height: 110px;
+    height: auto;
   }
 
   .navbar-right {
@@ -50,10 +50,27 @@
         color: $light-crimson;
       }
     }
+    i {
+      font-size: 20px;
+      padding-bottom: 5px;
+      padding-right: 10px;
+    }
   }
 
   .logo-navbar {
     width: 250px;
+  }
+
+  .logo-navbar-all {
+    width: 250px;
+  }
+
+  .navbar-over-right {
+    display: flex;
+  }
+
+  .search-nav {
+    display: none;
   }
 }
 
@@ -66,7 +83,14 @@
     justify-content: space-between;
     align-items: center;
     background-color: $lavender-blush;
+  }
+
+  .navbar-home {
     height: 110px;
+  }
+
+  .navbar-all {
+    height: 250px;
   }
 
   .navbar-right {
@@ -110,7 +134,14 @@
     justify-content: space-between;
     align-items: center;
     background-color: $lavender-blush;
+  }
+
+  .navbar-home {
     height: 110px;
+  }
+
+  .navbar-all {
+    height: 250px;
   }
 
   .navbar-right {
@@ -155,7 +186,14 @@
     justify-content: space-between;
     align-items: center;
     background-color: $lavender-blush;
+  }
+
+  .navbar-home {
     height: 110px;
+  }
+
+  .navbar-all {
+    height: 250px;
   }
 
   .navbar-right {
@@ -214,7 +252,14 @@
     justify-content: space-between;
     align-items: center;
     background-color: $lavender-blush;
+  }
+
+  .navbar-home {
     height: 110px;
+  }
+
+  .navbar-all {
+    height: 250px;
   }
 
   .navbar-right {
@@ -253,17 +298,25 @@
 @media (min-device-width:320px) and (max-device-width: 480px) {
   // Navbar Overall
 
+  .extra-pad {
+    padding-bottom: 40px;
+  }
+
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $lavender-blush;
-    height: 110px;
+    height: auto;
   }
 
   .navbar-right {
     display: flex;
     align-items: center;
+    padding-right: 20px;
+    i {
+      margin-bottom: 0.5rem;
+    }
   }
 
   .item-navbar-right-pink {
@@ -300,6 +353,11 @@
     margin-left: 10px;
   }
 
+  .logo-navbar-all {
+    width: 475px;
+    margin-left: 10px;
+  }
+
   .navbar-toggler {
     border: 2px solid #EA638C;
     padding: 10px 15px;
@@ -322,6 +380,41 @@
     border-radius: 8px;
     h6 {
       margin-bottom: 0;
+    }
+  }
+
+  .item-navbar-right-black {
+    display: none;
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        color: $light-crimson;
+      }
+    }
+    i {
+      font-size: 50px;
+      padding-top: 10px;
+    }
+  }
+
+  .navbar-over-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-nav {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    background-color: $white-smoke;
+    form {
+      position: relative;
+    }
+    i {
+      color: $light-crimson;
+      font-size: 50px;
     }
   }
 }

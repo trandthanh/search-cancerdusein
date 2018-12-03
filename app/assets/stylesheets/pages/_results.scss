@@ -49,3 +49,266 @@
     }
   }
 }
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-device-width:1025px) and (max-device-width: 1280px) {
+  .results-count {
+    padding: 60px 0px;
+    border-bottom: 1px solid gray;
+  }
+
+  .results-theme {
+    padding: 50px 0px;
+  }
+
+  .results-article {
+    background-color: $white-smoke;
+    padding: 20px 50px;
+    p {
+      color: $ash-grey;
+      margin-bottom: 5px;
+    }
+  }
+
+  .results-article-title {
+    margin-bottom: 10px;
+    h4 {
+      padding-right: 8px;
+      display: inline;
+      color: $light-crimson;
+    }
+    h6 {
+      display: inline;
+      color: $light-crimson;
+      font-weight: 400px;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .results-article-note {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .results-article-link {
+    h4 {
+      &:hover {
+        color: $light-crimson;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-device-width:961px) and (max-device-width: 1024px) {
+  .results-count {
+      padding: 60px 0px;
+      border-bottom: 1px solid gray;
+    }
+
+    .results-theme {
+      padding: 50px 0px;
+    }
+
+    .results-article {
+      background-color: $white-smoke;
+      padding: 20px 50px;
+      p {
+        color: $ash-grey;
+        margin-bottom: 5px;
+      }
+    }
+
+    .results-article-title {
+      margin-bottom: 10px;
+      h4 {
+        padding-right: 8px;
+        display: inline;
+        color: $light-crimson;
+      }
+      h6 {
+        display: inline;
+        color: $light-crimson;
+        font-weight: 400px;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .results-article-note {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .results-article-link {
+      h4 {
+        &:hover {
+          color: $light-crimson;
+          opacity: 0.5;
+        }
+      }
+    }
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-device-width:641px) and (max-device-width: 960px) {
+  .results-count {
+      padding: 60px 0px;
+      border-bottom: 1px solid gray;
+    }
+
+    .results-theme {
+      padding: 50px 0px;
+    }
+
+    .results-article {
+      background-color: $white-smoke;
+      padding: 20px 50px;
+      p {
+        color: $ash-grey;
+        margin-bottom: 5px;
+      }
+    }
+
+    .results-article-title {
+      margin-bottom: 10px;
+      h4 {
+        padding-right: 8px;
+        display: inline;
+        color: $light-crimson;
+      }
+      h6 {
+        display: inline;
+        color: $light-crimson;
+        font-weight: 400px;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .results-article-note {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .results-article-link {
+      h4 {
+        &:hover {
+          color: $light-crimson;
+          opacity: 0.5;
+        }
+      }
+    }
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-device-width:481px) and (max-device-width: 640px) {
+  .results-count {
+      padding: 60px 0px;
+      border-bottom: 1px solid gray;
+    }
+
+    .results-theme {
+      padding: 50px 0px;
+    }
+
+    .results-article {
+      background-color: $white-smoke;
+      padding: 20px 50px;
+      p {
+        color: $ash-grey;
+        margin-bottom: 5px;
+      }
+    }
+
+    .results-article-title {
+      margin-bottom: 10px;
+      h4 {
+        padding-right: 8px;
+        display: inline;
+        color: $light-crimson;
+      }
+      h6 {
+        display: inline;
+        color: $light-crimson;
+        font-weight: 400px;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .results-article-note {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .results-article-link {
+      h4 {
+        &:hover {
+          color: $light-crimson;
+          opacity: 0.5;
+        }
+      }
+    }
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-device-width:320px) and (max-device-width: 480px) {
+  .results-count {
+    padding: 60px 0px;
+    border-bottom: 1px solid gray;
+  }
+
+  .results-theme {
+    padding: 50px 20px;
+  }
+
+  .results-article {
+    background-color: $white-smoke;
+    padding: 20px 20px;
+    p {
+      color: $ash-grey;
+      margin-bottom: 5px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .results-article-title {
+    margin-bottom: 10px;
+    h4 {
+      padding-right: 8px;
+      display: inline;
+      color: $light-crimson;
+    }
+    h6 {
+      display: inline;
+      color: $light-crimson;
+      font-weight: 400px;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .results-article-note {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .results-article-link {
+    h4 {
+      font-size: 2rem;
+      &:hover {
+        color: $light-crimson;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
