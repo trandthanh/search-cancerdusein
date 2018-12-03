@@ -6,7 +6,11 @@ function searchBar() {
     event.preventDefault();
     searchBarBig.value = "";
     searchBarBig.classList.toggle("searchbar-medium-wide");
-    searchBarBig.focus();
+    if (searchBarBig.classList.contains('searchbar-medium-wide')) {
+      searchBarBig.focus();
+    } else {
+      searchBarBig.blur();
+    }
   });
 }
 
