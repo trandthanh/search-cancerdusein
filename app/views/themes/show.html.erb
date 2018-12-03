@@ -31,6 +31,23 @@
         <div class="results-theme">
           <h6>Les articles (<%= pluralize @article_formatted_links.count, "résultat" %>)</h6>
         </div>
+
+
+          <% @keywords.order('title ASC').each do |k| %>
+            <% if @article_formatted_links.count { |ls| ls.keywords.include?(k) } != 0 %>
+              <%= k.title %>
+              <% k.tags.each do |kt| %>
+                <% if kt.link.keywords.include?(k) && kt.link.themes.include?(@theme) %>
+                  <%= kt.link.title %>
+                <% end %>
+              <% end %>
+              <br>
+            <% end %>
+          <% end %>
+
+
+
+
         <% @article_formatted_links.each do |l| %>
           <div class="results-article">
             <div class="results-article-title">
@@ -44,6 +61,11 @@
             </div>
             <p><%= l.description %></p>
             <p class="results-article-note">Avis de l'équipe : <%= l.note %></p>
+
+            <% l.tags.each do |lc| %>
+              <%= lc.keyword.title %>
+            <% end %>
+
           </div>
         <% end %>
       <% end %>
