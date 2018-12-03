@@ -1,1 +1,73 @@
-<h1><%= @theme.title %></h1>
+<div class="wrapper-white">
+  <div class="results-count">
+    <h2>Dans la catégorie "<%= @theme.title %>" (<%= pluralize @theme.categories.count, "résultat" %>)</h2>
+  </div>
+
+  <div class="results-list-head">
+    <div class="results-list">
+
+      <% unless @information_formatted_links.count == 0 %>
+        <div class="results-theme">
+          <h6>Les fiches d'informations générales (<%= pluralize @information_formatted_links.count, "résultat" %>)</h6>
+        </div>
+        <% @information_formatted_links.each do |l| %>
+          <div class="results-article">
+            <div class="results-article-title">
+              <%= link_to l.url, target: "_blank", class: "results-article-link" do %>
+                <h4><%= l.title %></h4>
+              <% end %>
+              <h6>/ publié par <%= l.publication %>
+                <% unless l.date.nil? %>
+                  , <%= l.date %></h6>
+                <% end %>
+            </div>
+            <p><%= l.description %></p>
+            <p class="results-article-note">Avis de l'équipe : <%= l.note %></p>
+          </div>
+        <% end %>
+      <% end %>
+
+      <% if @article_formatted_links.count != 0 %>
+        <div class="results-theme">
+          <h6>Les articles (<%= pluralize @article_formatted_links.count, "résultat" %>)</h6>
+        </div>
+        <% @article_formatted_links.each do |l| %>
+          <div class="results-article">
+            <div class="results-article-title">
+              <%= link_to l.url, target: "_blank", class: "results-article-link" do %>
+                <h4><%= l.title %></h4>
+              <% end %>
+              <h6>/ publié par <%= l.publication %>
+                <% unless l.date.nil? %>
+                  , <%= l.date %></h6>
+                <% end %>
+            </div>
+            <p><%= l.description %></p>
+            <p class="results-article-note">Avis de l'équipe : <%= l.note %></p>
+          </div>
+        <% end %>
+      <% end %>
+
+      <% if @livre_formatted_links.count != 0 %>
+        <div class="results-theme">
+          <h6>Les livres (<%= pluralize @livre_formatted_links.count, "résultat" %>)</h6>
+        </div>
+        <% @livre_formatted_links.each do |l| %>
+          <div class="results-article">
+            <div class="results-article-title">
+              <%= link_to l.url, target: "_blank", class: "results-article-link" do %>
+                <h4><%= l.title %></h4>
+              <% end %>
+              <h6>/ publié par <%= l.publication %>
+                <% unless l.date.nil? %>
+                  , <%= l.date %></h6>
+                <% end %>
+            </div>
+            <p><%= l.description %></p>
+            <p class="results-article-note">Avis de l'équipe : <%= l.note %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
