@@ -3,9 +3,15 @@
     <div class="results-count">
       <% if params[:q].nil? %>
         <h2><%= pluralize @links_theme.count, "résultat" %> pour "<%= params[:query] %>"</h2>
+        <%= link_to theme_path(params[:query]), class: "sub-link" do %>
+          <p>Ou voir notre page "<%= params[:query] %>"</p>
+        <% end %>
       <% end %>
       <% if params[:query].nil? %>
         <h2><%= pluralize @links_theme.count, "résultat" %> pour "<%= params[:q] %>"</h2>
+        <%= link_to theme_path(params[:q]), class: "sub-link" do %>
+          <p>Ou voir notre page "<%= params[:q] %>"</p>
+        <% end %>
       <% end %>
     </div>
     <% if %w(s'informer gerer gérer vivre ressources recherche).include?(params[:query]) %>
@@ -35,28 +41,28 @@
     <% end %>
     <% if %w(s'informer gerer gérer vivre ressources recherche).include?(params[:q]) %>
       <div class="results-list results-theme">
-              <% @links.each do |ls| %>
-                <% ls.themes.each do |lst| %>
-                  <% if lst.title == params[:q] %>
-                    <% lst.categories.each do |lstc| %>
-                      <div class="results-article">
-                        <div class="results-article-title">
-                          <%= link_to lstc.link.url, target: "_blank", class: "results-article-link" do %>
-                            <h4><%= lstc.link.title %></h4>
-                          <% end %>
-                          <h6>/ publié par <%= lstc.link.publication %>
-                            <% unless lstc.link.date.nil? %>
-                              , <%= lstc.link.date %></h6>
-                            <% end %>
-                        </div>
-                        <p><%= lstc.link.description %></p>
-                        <p class="results-article-note">Avis de l'équipe : <%= lstc.link.note %></p>
-                      </div>
+        <% @links.each do |ls| %>
+          <% ls.themes.each do |lst| %>
+            <% if lst.title == params[:q] %>
+              <% lst.categories.each do |lstc| %>
+                <div class="results-article">
+                  <div class="results-article-title">
+                    <%= link_to lstc.link.url, target: "_blank", class: "results-article-link" do %>
+                      <h4><%= lstc.link.title %></h4>
                     <% end %>
-                  <% end %>
-                <% end %>
+                    <h6>/ publié par <%= lstc.link.publication %>
+                      <% unless lstc.link.date.nil? %>
+                        , <%= lstc.link.date %></h6>
+                      <% end %>
+                  </div>
+                  <p><%= lstc.link.description %></p>
+                  <p class="results-article-note">Avis de l'équipe : <%= lstc.link.note %></p>
+                </div>
               <% end %>
-            </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
 
     <% else %>

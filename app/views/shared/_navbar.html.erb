@@ -14,7 +14,7 @@
       <div class="navbar-nav">
         <% @themes.order('created_at ASC').each do |t| %>
           <div class="item-navbar-right-pink">
-            <%= link_to theme_path(t) do %>
+            <%= link_to theme_path(t.title) do %>
               <h6><%= t.title %></h6>
             <% end %>
           </div>

@@ -49,6 +49,14 @@
       }
     }
   }
+
+  .sub-link {
+    text-decoration: none;
+    color: $ash-grey;
+    &:hover {
+      color: $light-crimson;
+    }
+  }
 }
 
 /* big landscape tablets, laptops, and desktops */
@@ -100,6 +108,14 @@
         color: $light-crimson;
         opacity: 0.5;
       }
+    }
+  }
+
+  .sub-link {
+    text-decoration: none;
+    color: $ash-grey;
+    &:hover {
+      color: $light-crimson;
     }
   }
 }
@@ -155,6 +171,14 @@
         }
       }
     }
+
+    .sub-link {
+      text-decoration: none;
+      color: $ash-grey;
+      &:hover {
+        color: $light-crimson;
+      }
+    }
 }
 
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
@@ -206,6 +230,14 @@
           color: $light-crimson;
           opacity: 0.5;
         }
+      }
+    }
+
+    .sub-link {
+      text-decoration: none;
+      color: $ash-grey;
+      &:hover {
+        color: $light-crimson;
       }
     }
 }
@@ -261,6 +293,14 @@
         }
       }
     }
+
+    .sub-link {
+      text-decoration: none;
+      color: $ash-grey;
+      &:hover {
+        color: $light-crimson;
+      }
+    }
 }
 
 /* smartphones, iPhone, portrait 480x320 phones */
@@ -314,6 +354,14 @@
         color: $light-crimson;
         opacity: 0.5;
       }
+    }
+  }
+
+  .sub-link {
+    text-decoration: none;
+    color: $ash-grey;
+    &:hover {
+      color: $light-crimson;
     }
   }
 }

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/search', to: 'pages#search'
   post '/search', to: 'pages#search', as: 'results'
   get '/monhistoire', to: "pages#monhistoire"
+  get '/themes/:title', to: "themes#show", as: :theme
   resources :themes, only: [:show]
 end
 
