@@ -20,8 +20,8 @@
           </div>
         <% end %>
         <div class="item-navbar-right-grey">
-          <%= link_to monhistoire_path do %>
-            <h6>mon histoire</h6>
+          <%= link_to monprojet_path do %>
+            <h6>mon projet</h6>
           <% end %>
         </div>
       </div>
@@ -43,8 +43,8 @@
 </nav>
 <div class="search-nav">
   <%= form_tag results_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :q,
+      params[:q],
       autocomplete: "off",
       class: "searchbar-big",
       placeholder: "Rechercher un mot-clé"
@@ -58,14 +58,14 @@
   <div class="navbar-nav">
     <% @themes.order('created_at ASC').each do |t| %>
       <div class="item-navbar-right-pink">
-        <%= link_to theme_path(t) do %>
+        <%= link_to theme_path(t.title) do %>
           <h6><%= t.title %></h6>
         <% end %>
       </div>
     <% end %>
     <div class="item-navbar-right-grey">
-      <%= link_to monhistoire_path do %>
-        <h6>mon histoire</h6>
+      <%= link_to monprojet_path do %>
+        <h6>mon projet</h6>
       <% end %>
     </div>
   </div>

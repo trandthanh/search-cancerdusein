@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
   def search
     # @search = Link.search(params.fetch(:query, "*"))
-    @link_search = Link.search params[:query], operator: "or"
+    @link_search = Link.search(params.fetch(:query, "*"))
     @theme_search = Theme.search params[:query], operator: "or"
     @themes = Theme.all
 
@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     @link_search_q = Link.search params[:q], operator: "or"
   end
 
-  def monhistoire
+  def monprojet
     @themes = Theme.all
   end
 end

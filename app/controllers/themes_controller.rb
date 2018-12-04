@@ -8,5 +8,9 @@ class ThemesController < ApplicationController
     @information_formatted_links = Link.where(format: "information").joins(:categories).joins(:themes).where(themes: { title: @theme.title })
 
     @keywords = Keyword.all
+
+    @ressources = Link.joins(:themes).where(themes: { title: "ressources" })
+
+    @navbar_search = Link.search(params.fetch(:q, "*"))
   end
 end
