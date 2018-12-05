@@ -15,36 +15,17 @@ class Link < ApplicationRecord
   # searchkick word_middle: [:format, :title, :publication, :description, :note]
   # searchkick match: :word_middle
   # searchkick word_start: [:title, :author, :genre]
-  searchkick word_middle: [:title, :format, :publication]
+  searchkick searchable: [:format, :keywords]
 
   def search_data
     {
-    title: title,
     format: format,
-    publication: publication
+    # publication: publication
     }
-    # attributes.merge(
-    #   themes: themes.map(&:title),
-    #   keywords: keywords.map(&:title)
-    # )
+    attributes.merge(
+      keywords: keywords.map(&:title)
+    )
   end
-
-  # def search_data
-  #   {
-  #     name: name,
-  #     department_name: department.name,
-  #     on_sale: sale_price.present?
-  #   }
-  # end
-
-  # def search_data
-  #   attributes.merge(
-  #     author_name: author(&:name)
-  #     publisher_name: publisher(&:name)
-  #     subjects_name: subjects.map(&:name)
-  #   )
-  # end
-
 end
 
 

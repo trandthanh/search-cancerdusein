@@ -6,9 +6,15 @@
       </div>
       <div class="searchbar">
         <%= form_tag results_path, method: :get do %>
+          <div class="select">
+            <%= select_tag :format,
+              options_for_select(@format, params[:format]),
+              class: "dropdown-home",
+              prompt: "format"
+            %>
+          </div>
           <%= text_field_tag :query,
             params[:query],
-            autocomplete: "off",
             class: "searchbar-big",
             placeholder: "Rechercher un mot-clé"
           %>

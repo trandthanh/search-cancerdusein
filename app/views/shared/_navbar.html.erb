@@ -28,8 +28,15 @@
     </div>
     <div class="item-navbar-right-black">
       <%= form_tag results_path, method: :get do %>
-        <%= text_field_tag :q,
-          params[:q],
+        <div class="select-navbar">
+          <%= select_tag :format,
+            options_for_select(@format, params[:format]),
+            class: "dropdown-navbar",
+            prompt: "format"
+          %>
+        </div>
+        <%= text_field_tag :query,
+          params[:query],
           autocomplete: "off",
           class: "searchbar-medium",
           placeholder: "Rechercher un mot-clé"
@@ -43,8 +50,8 @@
 </nav>
 <div class="search-nav">
   <%= form_tag results_path, method: :get do %>
-    <%= text_field_tag :q,
-      params[:q],
+    <%= text_field_tag :query,
+      params[:query],
       autocomplete: "off",
       class: "searchbar-big",
       placeholder: "Rechercher un mot-clé"

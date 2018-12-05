@@ -10,7 +10,5 @@ class ThemesController < ApplicationController
     @keywords = Keyword.all
 
     @ressources = Link.joins(:themes).where(themes: { title: "ressources" })
-
-    @navbar_search = Link.search(params.fetch(:q, "*"))
   end
 end

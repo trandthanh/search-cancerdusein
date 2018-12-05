@@ -5,25 +5,25 @@
   <div class="results-list-head">
     <div class="results-list">
 
-      <div class="results-theme">
         <% if @theme.title == "ressources" %>
-          <% @ressources.order('title ASC').each do |rl| %>
-            <div class="results-article">
-              <div class="results-article-title">
-                <%= link_to rl.url, target: "_blank", class: "results-article-link" do %>
-                  <h4><%= rl.title %></h4>
-                <% end %>
-                <h6>/ publié par <%= rl.publication %>
-                  <% unless rl.date.nil? %>
-                    , <%= rl.date %></h6>
+          <div class="results-theme">
+            <% @ressources.order('title ASC').each do |rl| %>
+              <div class="results-article">
+                <div class="results-article-title">
+                  <%= link_to rl.url, target: "_blank", class: "results-article-link" do %>
+                    <h4><%= rl.title %></h4>
                   <% end %>
+                  <h6>/ publié par <%= rl.publication %>
+                    <% unless rl.date.nil? %>
+                      , <%= rl.date %></h6>
+                    <% end %>
+                </div>
+                <p><%= rl.description %></p>
+                <p class="results-article-note">Avis de l'équipe : <%= rl.note %></p>
               </div>
-              <p><%= rl.description %></p>
-              <p class="results-article-note">Avis de l'équipe : <%= rl.note %></p>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         <% end %>
-      </div>
 
       <% if @information_formatted_links.count != 0 %>
         <div class="results-theme">

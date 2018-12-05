@@ -1,26 +1,33 @@
 class PagesController < ApplicationController
+
   def home
     # @search = Link.search(params.fetch(:query, "*"))
-    @link_search = Link.search params[:query], operator: "or"
-    @theme_search = Theme.search params[:query], operator: "or"
+    @format = ["article", "livre", "ressource"]
+    @links = Link.all
+
+    @link_search = Link.search params[:query], fields: [ :format, :keywords ], where: {format: params[:format]}
+
     @themes = Theme.all
+
+
   end
 
   def search
     # @search = Link.search(params.fetch(:query, "*"))
-    @link_search = Link.search(params.fetch(:query, "*"))
-    @theme_search = Theme.search params[:query], operator: "or"
+    # @link_search = Link.search params[:query], fields: [ :keywords ]
+    @link_search = Link.search params[:query], fields: [ :format, :keywords ], where: {format: params[:format]}
+
     @themes = Theme.all
 
-    @navbar_search = Link.search(params.fetch(:q, "*"))
-
     @links = Link.all
+    @links_theme = Theme.where(title: params[:query])
 
-    @links_theme = Theme.where(title: params[:q]).or(Theme.where(title: params[:query]))
-    @link_search_q = Link.search params[:q], operator: "or"
+    @format = ["article", "livre", "ressource"]
   end
 
   def monprojet
     @themes = Theme.all
   end
 end
+
+

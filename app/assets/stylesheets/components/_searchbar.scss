@@ -3,9 +3,10 @@
   .searchbar-big {
     border: 1px solid white;
     border-radius: 40px;
-    width: 500px;
+    width: 400px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     padding: 15px;
+    border:1px solid $light-crimson;
     &:focus {
       outline: none !important;
       border:1px solid $light-crimson;
@@ -26,6 +27,7 @@
 
   form {
     position: relative;
+    display: flex;
   }
 
   .search-button {
