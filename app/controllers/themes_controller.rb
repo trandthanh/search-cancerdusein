@@ -10,5 +10,7 @@ class ThemesController < ApplicationController
     @keywords = Keyword.all
 
     @ressources = Link.joins(:themes).where(themes: { title: "ressources" })
+
+    @format = ["article", "livre", "ressource"]
   end
 end
