@@ -14,6 +14,21 @@
     }
     margin-top: 10px;
   }
+
+  .title {
+    padding-bottom: 50px;
+    border-bottom: 0.5px solid gray;
+    color: $light-crimson;
+
+  }
+
+  .paragraphs {
+    margin-top: 70px;
+    h5 {
+      font-weight: 300;
+      color: $ash-grey;
+    }
+  }
 }
 
 /* big landscape tablets, laptops, and desktops */
@@ -31,6 +46,21 @@
       font-style: italic;
     }
     margin-top: 10px;
+  }
+
+  .title {
+    padding-bottom: 50px;
+    border-bottom: 0.5px solid gray;
+    color: $light-crimson;
+
+  }
+
+  .paragraphs {
+    margin-top: 70px;
+    h5 {
+      font-weight: 300;
+      color: $ash-grey;
+    }
   }
 }
 
@@ -50,6 +80,21 @@
     }
     margin-top: 10px;
   }
+
+  .title {
+    padding-bottom: 50px;
+    border-bottom: 0.5px solid gray;
+    color: $light-crimson;
+
+  }
+
+  .paragraphs {
+    margin-top: 70px;
+    h5 {
+      font-weight: 300;
+      color: $ash-grey;
+    }
+  }
 }
 
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
@@ -68,6 +113,21 @@
     }
     margin-top: 10px;
   }
+
+  .title {
+    padding-bottom: 50px;
+    border-bottom: 0.5px solid gray;
+    color: $light-crimson;
+
+  }
+
+  .paragraphs {
+    margin-top: 70px;
+    h5 {
+      font-weight: 300;
+      color: $ash-grey;
+    }
+  }
 }
 
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
@@ -85,6 +145,21 @@
       font-style: italic;
     }
     margin-top: 10px;
+  }
+
+  .title {
+    padding-bottom: 50px;
+    border-bottom: 0.5px solid gray;
+    color: $light-crimson;
+
+  }
+
+  .paragraphs {
+    margin-top: 70px;
+    h5 {
+      font-weight: 300;
+      color: $ash-grey;
+    }
   }
 }
 
@@ -107,5 +182,20 @@
       font-size: 25px;
     }
     margin-top: 10px;
+  }
+
+  .title {
+    padding-bottom: 50px;
+    border-bottom: 0.5px solid gray;
+    color: $light-crimson;
+
+  }
+
+  .paragraphs {
+    margin-top: 70px;
+    h5 {
+      font-weight: 300;
+      color: $ash-grey;
+    }
   }
 }

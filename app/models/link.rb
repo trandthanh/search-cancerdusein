@@ -4,7 +4,7 @@ class Link < ApplicationRecord
   has_many :categories, dependent: :destroy
   has_many :themes, through: :categories
 
-  validates :format, presence: true
+  validates :format, presence: true, inclusion: { in: %w(livre pdf article siteweb association) }
   validates :title, presence: true
   validates :publication, presence: true
   validates :language, presence: true

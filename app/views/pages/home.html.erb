@@ -10,13 +10,13 @@
             <%= select_tag :format,
               options_for_select(@format, params[:format]),
               class: "dropdown-home",
-              prompt: "format"
+              prompt: "Un format ?"
             %>
           </div>
           <%= text_field_tag :query,
             params[:query],
             class: "searchbar-big",
-            placeholder: "Rechercher un mot-clé"
+            placeholder: "Un mot-clé ?"
           %>
           <%= button_tag(type: "submit", class: "btn btn-default search-button") do %>
             <i class="fas fa-search"></i>

@@ -34,6 +34,7 @@
     position: absolute;
     right: 12px;
     top: 6px;
+    background-color: transparent;
   }
 
   input:-webkit-autofill {
@@ -49,6 +50,7 @@
     width: 500px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     padding: 15px;
+    border:1px solid $light-crimson;
     &:focus {
       outline: none !important;
       border:1px solid $light-crimson;
@@ -69,6 +71,7 @@
 
   form {
     position: relative;
+    display: flex;
   }
 
   .search-button {
@@ -90,6 +93,7 @@
     width: 500px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     padding: 15px;
+    border:1px solid $light-crimson;
     &:focus {
       outline: none !important;
       border:1px solid $light-crimson;
@@ -110,6 +114,7 @@
 
   form {
     position: relative;
+    display: flex;
   }
 
   .search-button {
@@ -132,6 +137,7 @@
     width: 500px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     padding: 15px;
+    border:1px solid $light-crimson;
     &:focus {
       outline: none !important;
       border:1px solid $light-crimson;
@@ -152,6 +158,7 @@
 
   form {
     position: relative;
+    display: flex;
   }
 
   .search-button {
@@ -212,7 +219,7 @@
   .searchbar-big {
     border: 1px solid white;
     border-radius: 70px;
-    width: 800px;
+    width: 450px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     padding: 30px;
     font-size: 30px;
@@ -236,6 +243,7 @@
 
   form {
     position: relative;
+    display: flex;
   }
 
   .search-button {

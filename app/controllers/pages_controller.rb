@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     # @search = Link.search(params.fetch(:query, "*"))
-    @format = ["article", "livre", "ressource"]
+    @format = ["livre", "pdf", "article", "siteweb", "association"].sort
     @links = Link.all
 
     @link_search = Link.search params[:query], fields: [ :format, :keywords ], where: {format: params[:format]}
@@ -22,11 +22,12 @@ class PagesController < ApplicationController
     @links = Link.all
     @links_theme = Theme.where(title: params[:query])
 
-    @format = ["article", "livre", "ressource"]
+    @format = ["livre", "pdf", "article", "siteweb", "association"].sort
   end
 
   def monprojet
     @themes = Theme.all
+    @format = ["livre", "pdf", "article", "siteweb", "association"].sort
   end
 end
 

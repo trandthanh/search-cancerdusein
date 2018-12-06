@@ -11,6 +11,6 @@ class ThemesController < ApplicationController
 
     @ressources = Link.joins(:themes).where(themes: { title: "ressources" })
 
-    @format = ["article", "livre", "ressource"]
+    @format = %w(livre pdf article siteweb association)
   end
 end

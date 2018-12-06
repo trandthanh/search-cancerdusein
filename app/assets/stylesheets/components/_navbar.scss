@@ -195,7 +195,27 @@
   }
 
   .search-nav {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    background-color: $white-smoke;
+    form {
+      position: relative;
+    }
+    i {
+      color: $light-crimson;
+      font-size: 27px;
+    }
+  }
+
+  .nb-rgt-coll-desktop {
     display: none;
+  }
+
+  .navbar-over-right {
+    button {
+      display: none;
+    }
   }
 }
 

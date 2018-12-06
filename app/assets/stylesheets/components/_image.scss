@@ -1,0 +1,92 @@
+/* hi-res laptops and desktops */
+@media (min-device-width: 1281px) {
+  .banner-illustration {
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    overflow: hidden;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    background-color: $isabelline;
+  }
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-device-width:1025px) and (max-device-width: 1280px) {
+  .banner-illustration {
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    background-color: $isabelline;
+  }
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-device-width:961px) and (max-device-width: 1024px) {
+  .banner-illustration {
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    overflow: hidden;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    background-color: $isabelline;
+  }
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-device-width:641px) and (max-device-width: 960px) {
+  .banner-illustration {
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    background-color: $isabelline;
+  }
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-device-width:481px) and (max-device-width: 640px) {
+  .banner-illustration {
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    background-color: $isabelline;
+  }
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-device-width:320px) and (max-device-width: 480px) {
+  .banner-illustration {
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    background-color: $isabelline;
+  }
+}
