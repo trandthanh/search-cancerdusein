@@ -5,66 +5,6 @@
   <div class="results-list-head">
     <div class="results-list">
 
-        <% if @theme.title == "ressources" %>
-          <div class="results-theme">
-            <% @ressources.order('title ASC').each do |rl| %>
-              <div class="results-article">
-                <div class="results-article-title">
-                  <%= link_to rl.url, target: "_blank", class: "results-article-link" do %>
-                    <h4><%= rl.title %></h4>
-                  <% end %>
-                  <h6>/ publié par <%= rl.publication %>
-                    <% unless rl.date.nil? %>
-                      , <%= rl.date %></h6>
-                    <% end %>
-                </div>
-                <p><%= rl.description %></p>
-                <p class="results-article-note">Avis de l'équipe : <%= rl.note %></p>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-
-      <% if @information_formatted_links.count != 0 %>
-        <div class="results-theme">
-          <h6>Les fiches d'informations générales (<%= pluralize @information_formatted_links.count, "résultat" %>)</h6>
-        </div>
-        <div id="accordion">
-          <% @keywords.order('title ASC').each do |k| %>
-            <% if @information_formatted_links.count { |ls| ls.keywords.include?(k) } != 0 %>
-              <div class="card">
-                <div class="card-header" id="heading-<%= k.id %>">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-<%= k.id %>" aria-expanded="true" aria-controls="collapse-<%= k.id %>"><%= k.title %></button>
-                  </h5>
-                </div>
-                <div id="collapse-<%= k.id %>" class="collapse" aria-labelledby="heading-<%= k.id %>" data-parent="#accordion">
-                  <div class="card-body">
-                    <% k.tags.each do |kt| %>
-                      <% if kt.link.keywords.include?(k) && kt.link.themes.include?(@theme) %>
-                        <div class="results-article">
-                          <div class="results-article-title">
-                            <%= link_to kt.link.url, target: "_blank", class: "results-article-link" do %>
-                              <h4><%= kt.link.title %></h4>
-                            <% end %>
-                            <h6>/ publié par <%= kt.link.publication %>
-                              <% unless kt.link.date.nil? %>
-                                , <%= kt.link.date %></h6>
-                              <% end %>
-                          </div>
-                          <p><%= kt.link.description %></p>
-                          <p class="results-article-note">Avis de l'équipe : <%= kt.link.note %></p>
-                        </div>
-                      <% end %>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      <% end %>
-
       <% if @article_formatted_links.count != 0 %>
         <div class="results-theme">
           <h6>Les articles (<%= pluralize @article_formatted_links.count, "résultat" %>)</h6>
@@ -124,6 +64,91 @@
             <p class="results-article-note">Avis de l'équipe : <%= l.note %></p>
           </div>
         <% end %>
+      <% end %>
+
+
+
+      <% if @guide_formatted_links.count != 0 %>
+        <div class="results-theme">
+          <h6>Les guides (<%= pluralize @guide_formatted_links.count, "résultat" %>)</h6>
+        </div>
+        <div id="accordion">
+          <% @keywords.order('title ASC').each do |k| %>
+            <% if @guide_formatted_links.count { |ls| ls.keywords.include?(k) } != 0 %>
+              <div class="card">
+                <div class="card-header" id="heading-<%= k.id %>">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-<%= k.id %>" aria-expanded="true" aria-controls="collapse-<%= k.id %>"><%= k.title %></button>
+                  </h5>
+                </div>
+                <div id="collapse-<%= k.id %>" class="collapse" aria-labelledby="heading-<%= k.id %>" data-parent="#accordion">
+                  <div class="card-body">
+                    <% k.tags.each do |kt| %>
+                      <% if kt.link.keywords.include?(k) && kt.link.themes.include?(@theme) %>
+                        <div class="results-article">
+                          <div class="results-article-title">
+                            <%= link_to kt.link.url, target: "_blank", class: "results-article-link" do %>
+                              <h4><%= kt.link.title %></h4>
+                            <% end %>
+                            <h6>/ publié par <%= kt.link.publication %>
+                              <% unless kt.link.date.nil? %>
+                                , <%= kt.link.date %></h6>
+                              <% end %>
+                          </div>
+                          <p><%= kt.link.description %></p>
+                          <p class="results-article-note">Avis de l'équipe : <%= kt.link.note %></p>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+
+
+
+
+      <% if @association_formatted_links.count != 0 %>
+        <div class="results-theme">
+          <h6>Les associations (<%= pluralize @association_formatted_links.count, "résultat" %>)</h6>
+        </div>
+        <div id="accordion">
+          <% @keywords.order('title ASC').each do |k| %>
+            <% if @association_formatted_links.count { |ls| ls.keywords.include?(k) } != 0 %>
+              <div class="card">
+                <div class="card-header" id="heading-<%= k.id %>">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-<%= k.id %>" aria-expanded="true" aria-controls="collapse-<%= k.id %>"><%= k.title %></button>
+                  </h5>
+                </div>
+                <div id="collapse-<%= k.id %>" class="collapse" aria-labelledby="heading-<%= k.id %>" data-parent="#accordion">
+                  <div class="card-body">
+                    <% k.tags.each do |kt| %>
+                      <% if kt.link.keywords.include?(k) && kt.link.themes.include?(@theme) %>
+                        <div class="results-article">
+                          <div class="results-article-title">
+                            <%= link_to kt.link.url, target: "_blank", class: "results-article-link" do %>
+                              <h4><%= kt.link.title %></h4>
+                            <% end %>
+                            <h6>/ publié par <%= kt.link.publication %>
+                              <% unless kt.link.date.nil? %>
+                                , <%= kt.link.date %></h6>
+                              <% end %>
+                          </div>
+                          <p><%= kt.link.description %></p>
+                          <p class="results-article-note">Avis de l'équipe : <%= kt.link.note %></p>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
 
     </div>

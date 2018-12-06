@@ -9,28 +9,38 @@
           <div class="results-theme">
             <h6>Dans la catégorie "<%= t.title %>" (<%= pluralize @link_search.results.count { |ls| ls.themes.include?(t) }, "résultat" %>)</h6>
           </div>
-        <% end %>
-        <% @link_search.each do |ls| %>
-          <% ls.themes.each do |lst| %>
-            <% if t == lst %>
-              <div class="results-article">
-                <div class="results-article-format">
-                  <%= ls.format %>
-                </div>
-                <div class="results-article-title">
-                  <%= link_to ls.url, target: "_blank", class: "results-article-link" do %>
-                    <h4><%= ls.title %></h4>
-                  <% end %>
-                  <h6>/ publié par <%= ls.publication %>
-                    <% unless ls.date.nil? %>
-                      , <%= ls.date %></h6>
-                    <% end %>
-                </div>
-                <p><%= ls.description %></p>
-                <p class="results-article-note">Avis de l'équipe : <%= ls.note %></p>
+
+
+          <% @format.each do |f|  %>
+            <% if @link_search.results.count { |ls| ls.format.include?(f) } != 0 %>
+              <div class="results-format">
+                <h6>En format "<%= f %>" (<%= pluralize @link_search.results.count { |ls| ls.format.include?(f) }, "résultat" %>)</h6>
               </div>
             <% end %>
           <% end %>
+
+
+
+          <% @link_search.sort.each do |ls| %>
+            <% ls.themes.each do |lst| %>
+              <% if t == lst %>
+                <div class="results-article">
+                  <div class="results-article-title">
+                    <%= link_to ls.url, target: "_blank", class: "results-article-link" do %>
+                      <h4><%= ls.title %></h4>
+                    <% end %>
+                    <h6>/ publié par <%= ls.publication %>
+                      <% unless ls.date.nil? %>
+                        , <%= ls.date %></h6>
+                      <% end %>
+                  </div>
+                  <p><%= ls.description %></p>
+                  <p class="results-article-note">Avis de l'équipe : <%= ls.note %></p>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+
         <% end %>
       <% end %>
     </div>
