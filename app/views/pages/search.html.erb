@@ -2,6 +2,7 @@
   <div class="results-count">
     <h2><%= pluralize @link_search.total_count, "résultat" %> pour "<%= params[:query] %>" en format "<%= params[:format] %>"</h2>
   </div>
+
   <div class="results-list">
     <div class="results-list-head">
       <% @themes.each do |t| %>
@@ -9,8 +10,7 @@
           <div class="results-theme">
             <h6>Dans la catégorie "<%= t.title %>" (<%= pluralize @link_search.results.count { |ls| ls.themes.include?(t) }, "résultat" %>)</h6>
           </div>
-
-          <% @link_search.sort.each do |ls| %>
+          <% @link_search.each do |ls| %>
             <% ls.themes.each do |lst| %>
               <% if t == lst %>
                 <div class="results-article">
@@ -18,6 +18,7 @@
                     <%= link_to ls.url, target: "_blank", class: "results-article-link" do %>
                       <h4><%= ls.title %></h4>
                     <% end %>
+                    <br>
                     <h6>/ publié par <%= ls.publication %>
                       <% unless ls.date.nil? %>
                         , <%= ls.date %></h6>
@@ -29,7 +30,6 @@
               <% end %>
             <% end %>
           <% end %>
-
         <% end %>
       <% end %>
     </div>
