@@ -30,6 +30,7 @@ class PagesController < ApplicationController
   def monprojet
     @themes = Theme.all
     @format = ["livre", "pdf", "article", "blog", "association", "guide"].sort
+    @keywords = Keyword.all
   end
 end
 
