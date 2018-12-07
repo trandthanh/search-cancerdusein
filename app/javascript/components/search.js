@@ -4,7 +4,7 @@ function searchBar() {
 
   const dropdown = document.querySelector('.dropdown-navbar');
   const dropdown2 = document.querySelector('.dropdown-navbar-2');
-  const dropdownb = document.querySelector('.search-button-test');
+  const dropdownb = document.querySelector('.search-button-submit');
 
 
   // const input = document.querySelector('input');
@@ -16,7 +16,7 @@ function searchBar() {
     // searchBarBig.classList.toggle("searchbar-medium-wide");
     dropdown.classList.toggle("dropdown-navbar-wide");
     dropdown2.classList.toggle("dropdown-navbar-wide-2");
-    dropdownb.classList.toggle("search-button-test-v");
+    dropdownb.classList.toggle("search-button-submit-v");
 
     // if (searchBarBig.classList.contains('searchbar-medium-wide')) {
     //   searchBarBig.focus();
