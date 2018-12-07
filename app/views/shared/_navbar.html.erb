@@ -35,12 +35,23 @@
             prompt: "Un format?"
           %>
         </div>
-        <%= text_field_tag :query,
+        <div class="select-navbar">
+          <%#= collection_select :query, :query, Keyword.all, :title, :title, prompt: "Un mot-clé ?" %>
+          <%= select_tag :query,
+          options_from_collection_for_select(@keywords, :title,:title , params[:query]),
+          class: "dropdown-navbar-2"
+          %>
+        </div>
+        <%#= text_field_tag :query,
           params[:query],
           autocomplete: "off",
           class: "searchbar-medium",
           placeholder: "Un mot-clé ?"
         %>
+        <%= button_tag(type: "submit", class: "btn btn-default search-button-test transparent-background") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+
         <%= button_tag(type: "button", class: "btn btn-default search-button-js transparent-background") do %>
           <i class="fas fa-search"></i>
         <% end %>
@@ -57,7 +68,14 @@
         prompt: "Un format ?"
       %>
     </div>
-    <%= text_field_tag :query,
+    <div class="select">
+      <%= select_tag :query,
+      options_from_collection_for_select(@keywords, :title,:title , params[:query]),
+      class: "dropdown-keyword-home",
+      prompt: "Un mot-clé ?"
+      %>
+    </div>
+    <%#= text_field_tag :query,
       params[:query],
       autocomplete: "off",
       class: "searchbar-big",

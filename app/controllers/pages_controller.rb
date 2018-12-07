@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
     @themes = Theme.all
 
-
+    @keywords = Keyword.all
   end
 
   def search
@@ -23,6 +23,8 @@ class PagesController < ApplicationController
     @links_theme = Theme.where(title: params[:query])
 
     @format = ["livre", "pdf", "article", "blog", "association", "guide"].sort
+
+    @keywords = Keyword.all
   end
 
   def monprojet

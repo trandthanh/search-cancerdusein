@@ -13,11 +13,21 @@
               prompt: "Un format ?"
             %>
           </div>
-          <%= text_field_tag :query,
+          <!-- <div class="select"> -->
+            <%#= collection_select :query, :query, Keyword.all, :title, :title, prompt: "Un mot-clé ?" %>
+          <!-- </div> -->
+          <%#= text_field_tag :query,
             params[:query],
             class: "searchbar-big",
             placeholder: "Un mot-clé ?"
           %>
+          <div class="select">
+            <%= select_tag :query,
+            options_from_collection_for_select(@keywords, :title,:title , params[:query]),
+            class: "dropdown-keyword-home",
+            prompt: "Un mot-clé ?"
+            %>
+          </div>
           <%= button_tag(type: "submit", class: "btn btn-default search-button") do %>
             <i class="fas fa-search"></i>
           <% end %>
