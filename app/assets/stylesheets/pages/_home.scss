@@ -1,1 +1,281 @@
 // Specific CSS for your home-page
+
+
+
+
+
+/* hi-res laptops and desktops */
+@media (min-device-width: 1281px) {
+  .results-last {
+    border-bottom: 2px solid $isabelline;
+    margin-top: 20px;
+    a {
+      color: $cerise-pink;
+      &:hover {
+        color: $light-crimson;
+        opacity: 0.5;
+      }
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+
+  .results-last:last-child {
+    border-bottom: 0px;
+  }
+
+  .results-total-last {
+    border: 2px solid $isabelline;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    margin-top: 40px;
+  }
+
+  .results-last-format {
+    font-weight: 300;
+    font-size: 14px;
+    background-color: $ash-grey;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: inline-block;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 10px;
+    opacity: 0.5;
+  }
+
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-device-width:1025px) and (max-device-width: 1280px) {
+  .results-last {
+    border-bottom: 2px solid $isabelline;
+    margin-top: 20px;
+    a {
+      color: $cerise-pink;
+      &:hover {
+        color: $light-crimson;
+        opacity: 0.5;
+      }
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+
+  .results-last:last-child {
+    border-bottom: 0px;
+  }
+
+  .results-total-last {
+    border: 2px solid $isabelline;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    margin-top: 40px;
+  }
+
+  .results-last-format {
+    font-weight: 300;
+    font-size: 14px;
+    background-color: $ash-grey;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: inline-block;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 10px;
+    opacity: 0.5;
+  }
+
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-device-width:961px) and (max-device-width: 1024px) {
+  .results-last {
+    border-bottom: 2px solid $isabelline;
+    margin-top: 20px;
+    a {
+      color: $cerise-pink;
+      &:hover {
+        color: $light-crimson;
+        opacity: 0.5;
+      }
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+
+  .results-last:last-child {
+    border-bottom: 0px;
+  }
+
+  .results-total-last {
+    border: 2px solid $isabelline;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    margin-top: 40px;
+  }
+
+  .results-last-format {
+    font-weight: 300;
+    font-size: 14px;
+    background-color: $ash-grey;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: inline-block;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 10px;
+    opacity: 0.5;
+  }
+
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-device-width:641px) and (max-device-width: 960px) {
+  .results-last {
+    border-bottom: 2px solid $isabelline;
+    margin-top: 20px;
+    a {
+      color: $cerise-pink;
+      &:hover {
+        color: $light-crimson;
+        opacity: 0.5;
+      }
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+
+  .results-last:last-child {
+    border-bottom: 0px;
+  }
+
+  .results-total-last {
+    border: 2px solid $isabelline;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    margin-top: 40px;
+  }
+
+  .results-last-format {
+    font-weight: 300;
+    font-size: 14px;
+    background-color: $ash-grey;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: inline-block;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 10px;
+    opacity: 0.5;
+  }
+
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-device-width:481px) and (max-device-width: 640px) {
+  .results-last {
+    border-bottom: 2px solid $isabelline;
+    margin-top: 20px;
+    a {
+      color: $cerise-pink;
+      &:hover {
+        color: $light-crimson;
+        opacity: 0.5;
+      }
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+
+  .results-last:last-child {
+    border-bottom: 0px;
+  }
+
+  .results-total-last {
+    border: 2px solid $isabelline;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    margin-top: 40px;
+  }
+
+  .results-last-format {
+    font-weight: 300;
+    font-size: 14px;
+    background-color: $ash-grey;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: inline-block;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 10px;
+    opacity: 0.5;
+  }
+
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-device-width:320px) and (max-device-width: 480px) {
+  .results-last {
+    border-bottom: 2px solid $isabelline;
+    margin-top: 20px;
+    a {
+      color: $cerise-pink;
+      &:hover {
+        color: $light-crimson;
+        opacity: 0.5;
+      }
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+
+  .results-last:last-child {
+    border-bottom: 0px;
+  }
+
+  .results-total-last {
+    border: 2px solid $isabelline;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    margin-top: 40px;
+  }
+
+  .results-last-format {
+    font-weight: 300;
+    font-size: 14px;
+    background-color: $ash-grey;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: inline-block;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 10px;
+    opacity: 0.5;
+  }
+
+}

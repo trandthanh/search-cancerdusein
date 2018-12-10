@@ -43,3 +43,19 @@
     </div>
   </div>
 </div>
+<div class="wrapper-white-top">
+  <h2>Liens récemment ajoutées</h2>
+  <div class="results-total-last">
+    <% @links.last(5).each do |l| %>
+      <div class="results-last">
+        <span class="results-last-format"><%= l.format %></span>
+        <h5>
+          <%= link_to l.url do  %>
+            <%= l.title %> de <%= l.publication %>
+          <% end %>
+        </h5>
+        <p><%= l.note %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
