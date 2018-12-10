@@ -28,13 +28,17 @@
                       <% if kt.link.keywords.include?(k) && kt.link.themes.include?(@theme) %>
                         <div class="results-article">
                           <div class="results-article-title">
-                            <%= link_to kt.link.url, target: "_blank", class: "results-article-link" do %>
-                              <h4><%= kt.link.title %></h4>
-                            <% end %>
-                            <h6>/ publié par <%= kt.link.publication %>
+                            <h6><%= kt.link.publication %>
                               <% unless kt.link.date.nil? %>
-                                , <%= kt.link.date %></h6>
+                                , <%= kt.link.date %>
                               <% end %>
+                            </h6>
+                            <br>
+                            <div class="marg-title">
+                              <%= link_to kt.link.url, target: "_blank", class: "results-article-link" do %>
+                                <h1><%= kt.link.title %></h1>
+                              <% end %>
+                            </div>
                           </div>
                           <p><%= kt.link.description %></p>
                           <p class="results-article-note">Avis de l'équipe : <%= kt.link.note %></p>
@@ -56,13 +60,16 @@
         <% @livre_formatted_links.each do |l| %>
           <div class="results-article">
             <div class="results-article-title">
-              <%= link_to l.url, target: "_blank", class: "results-article-link" do %>
-                <h4><%= l.title %></h4>
-              <% end %>
-              <h6>/ publié par <%= l.publication %>
+              <h6><%= l.publication %>
                 <% unless l.date.nil? %>
-                  , <%= l.date %></h6>
+                  , <%= l.date %>
                 <% end %>
+              </h6>
+              <div class="marg-title">
+                <%= link_to l.url, target: "_blank", class: "results-article-link" do %>
+                  <h1><%= l.title %></h1>
+                <% end %>
+              </div>
             </div>
             <p><%= l.description %></p>
             <p class="results-article-note">Avis de l'équipe : <%= l.note %></p>

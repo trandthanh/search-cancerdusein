@@ -20,14 +20,17 @@
               <% if t == lst %>
                 <div class="results-article">
                   <div class="results-article-title">
-                    <%= link_to ls.url, target: "_blank", class: "results-article-link" do %>
-                      <h4><%= ls.title %></h4>
-                    <% end %>
-                    <br>
-                    <h6>/ publié par <%= ls.publication %>
+                    <h6><%= ls.publication %>
                       <% unless ls.date.nil? %>
-                        , <%= ls.date %></h6>
+                        , <%= ls.date %>
                       <% end %>
+                    </h6>
+                    <br>
+                    <div class="marg-title">
+                      <%= link_to ls.url, target: "_blank", class: "results-article-link" do %>
+                        <h1><%= ls.title %></h1>
+                      <% end %>
+                    </div>
                   </div>
                   <p><%= ls.description %></p>
                   <p class="results-article-note">Avis de l'équipe : <%= ls.note %></p>
