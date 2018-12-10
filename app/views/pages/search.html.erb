@@ -1,4 +1,9 @@
 <div class="wrapper-white">
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-warning"><%= value %></div>
+  <% end %>
+
   <div class="results-count">
     <h2><%= pluralize @link_search.total_count, "résultat" %> pour "<%= params[:query] %>" en format "<%= params[:format] %>"</h2>
   </div>

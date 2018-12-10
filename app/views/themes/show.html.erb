@@ -1,3 +1,7 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-warning"><%= value %></div>
+<% end %>
+
 <div class="wrapper-white">
   <div class="results-count">
     <h2>Dans la catégorie "<%= @theme.title %>" (<%= pluralize @theme.categories.count, "résultat" %>)</h2>

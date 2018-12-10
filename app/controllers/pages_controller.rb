@@ -15,7 +15,12 @@ class PagesController < ApplicationController
   def search
     # @search = Link.search(params.fetch(:query, "*"))
     # @link_search = Link.search params[:query], fields: [ :keywords ]
-    @link_search = Link.search params[:query], fields: [ :keywords ], where: {format: params[:format]}
+
+    if params[:query].present? && params[:format].present?
+      @link_search = Link.search params[:query], fields: [ :keywords ], where: {format: params[:format]}
+    else
+      redirect_to request.referrer, flash: { error: "Choisissez un format ET un mot clé !" }
+    end
 
     @themes = Theme.all
 
