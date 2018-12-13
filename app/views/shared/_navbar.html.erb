@@ -27,19 +27,20 @@
     </div>
     <div class="item-navbar-right-black">
       <%= form_tag results_path, method: :get do %>
-        <div class="select-navbar">
-          <%= select_tag :format,
+        <%= hidden_field_tag(:format, 'all') %>
+<!--         <div class="select-navbar">
+          <%#= select_tag :format,
             options_for_select(@format, params[:format]),
             class: "dropdown-navbar",
             prompt: "Un format?"
           %>
-        </div>
+        </div> -->
         <div class="select-navbar">
           <%#= collection_select :query, :query, Keyword.all, :title, :title, prompt: "Un mot-clé ?" %>
           <%= select_tag :query,
           options_from_collection_for_select(@keywords, :title,:title , params[:query]),
           class: "dropdown-navbar-2",
-          prompt: "Un mot-clé ?"
+          prompt: "Chercher un autre thème"
           %>
         </div>
         <%#= text_field_tag :query,
@@ -62,13 +63,14 @@
 
 <div class="search-nav">
   <%= form_tag results_path, method: :get do %>
-    <div class="select">
-      <%= select_tag :format,
+    <%= hidden_field_tag(:format, 'all') %>
+<!--     <div class="select">
+      <%#= select_tag :format,
         options_for_select(@format, params[:format]),
         class: "dropdown-home",
         prompt: "Un format ?"
       %>
-    </div>
+    </div> -->
     <div class="select">
       <%= select_tag :query,
       options_from_collection_for_select(@keywords, :title,:title , params[:query]),

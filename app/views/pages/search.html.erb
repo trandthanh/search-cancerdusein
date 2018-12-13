@@ -5,8 +5,31 @@
   <% end %>
 
   <div class="results-count">
-    <h2><%= pluralize @link_search.total_count, "résultat" %> pour "<%= params[:query] %>" en format "<%= params[:format] %>"</h2>
+    <h2><%= pluralize @link_search.total_count, "résultat" %> pour "<%= params[:query] %>"</h2>
   </div>
+
+  <%= params[:query] %>
+
+  <%= form_tag results_path, method: :get do %>
+    <%= hidden_field_tag(:query, params[:query]) %>
+    <%= button_tag(type: "submit", name: "format", value: "article", class: "btn btn-default search-button") do %>
+      <h1>Article</h1>
+    <% end %>
+  <% end %>
+
+  <%= form_tag results_path, method: :get do %>
+    <%= hidden_field_tag(:query, params[:query]) %>
+    <%= button_tag(type: "submit", name: "format", value: "all", class: "btn btn-default search-button") do %>
+      <h1>All</h1>
+    <% end %>
+  <% end %>
+
+  <%= form_tag results_path, method: :get do %>
+    <%= hidden_field_tag(:query, params[:query]) %>
+    <%= button_tag(type: "submit", name: "format", value: "livre", class: "btn btn-default search-button") do %>
+      <h1>Livre</h1>
+    <% end %>
+  <% end %>
 
   <div class="results-list">
     <div class="results-list-head">
@@ -20,6 +43,7 @@
               <% if t == lst %>
                 <div class="results-article">
                   <div class="results-article-title">
+                    <h6><%= ls.format %></h6> <br>
                     <h6><%= ls.publication %>
                       <% unless ls.date.nil? %>
                         , <%= ls.date %>
