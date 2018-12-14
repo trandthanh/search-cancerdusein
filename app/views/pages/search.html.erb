@@ -8,28 +8,37 @@
     <h2><%= pluralize @link_search.total_count, "résultat" %> pour "<%= params[:query] %>"</h2>
   </div>
 
-  <%= params[:query] %>
+  <%#= params[:query] %>
 
-  <%= form_tag results_path, method: :get do %>
-    <%= hidden_field_tag(:query, params[:query]) %>
-    <%= button_tag(type: "submit", name: "format", value: "article", class: "btn btn-default search-button") do %>
-      <h1>Article</h1>
-    <% end %>
-  <% end %>
 
-  <%= form_tag results_path, method: :get do %>
-    <%= hidden_field_tag(:query, params[:query]) %>
-    <%= button_tag(type: "submit", name: "format", value: "all", class: "btn btn-default search-button") do %>
-      <h1>All</h1>
-    <% end %>
-  <% end %>
+  <div class="filtering-form">
+    <div class="filter-button">
+      <%= form_tag results_path, method: :get do %>
+        <%= hidden_field_tag(:query, params[:query]) %>
+        <%= button_tag(type: "submit", name: "format", value: "article", class: "btn btn-default search-button") do %>
+          <h4>Article</h4>
+        <% end %>
+      <% end %>
+    </div>
 
-  <%= form_tag results_path, method: :get do %>
-    <%= hidden_field_tag(:query, params[:query]) %>
-    <%= button_tag(type: "submit", name: "format", value: "livre", class: "btn btn-default search-button") do %>
-      <h1>Livre</h1>
-    <% end %>
-  <% end %>
+    <div class="filter-button">
+      <%= form_tag results_path, method: :get do %>
+        <%= hidden_field_tag(:query, params[:query]) %>
+        <%= button_tag(type: "submit", name: "format", value: "all", class: "btn btn-default search-button") do %>
+          <h4>All</h4>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="filter-button">
+      <%= form_tag results_path, method: :get do %>
+        <%= hidden_field_tag(:query, params[:query]) %>
+        <%= button_tag(type: "submit", name: "format", value: "livre", class: "btn btn-default search-button") do %>
+          <h4>Livre</h4>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="results-list">
     <div class="results-list-head">
@@ -38,7 +47,7 @@
           <div class="results-theme">
             <h6>Dans la catégorie "<%= t.title %>" (<%= pluralize @link_search.results.count { |ls| ls.themes.include?(t) }, "résultat" %>)</h6>
           </div>
-          <% @link_search.each do |ls| %>
+          <% @link_search.results.sort_by(&:"created_at").each do |ls| %>
             <% ls.themes.each do |lst| %>
               <% if t == lst %>
                 <div class="results-article">
